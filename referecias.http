@@ -1,2 +1,50 @@
 ### Teste de Health Check
 GET http://localhost:3000/
+
+### Criar usuário RF07 
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "nome": "Teste",
+  "email": "teste@email.com",
+  "senha": "123456"
+}
+
+### Login RF07 
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "teste@email.com",
+  "senha": "123456"
+}
+
+### Criar chamado RF01
+POST http://localhost:3000/tickets
+Content-Type: application/json
+
+{
+  "titulo": "Computador não liga",
+  "descricao": "Aperto o botão e nada acontece",
+  "responsavel_id": 1
+}
+
+### Buscar chamados por responsável RF02 
+GET http://localhost:3000/tickets?responsavel_id=1
+
+### Buscar chamado por ID RF03 
+GET http://localhost:3000/tickets/1
+
+### Atualizar chamado RF06 
+PUT http://localhost:3000/tickets/1
+Content-Type: application/json
+
+{
+  "titulo": "Computador não liga (URGENTE)",
+  "descricao": "Agora está com cheiro de queimado",
+  "responsavel_id": 1
+}
+
+### Deletar chamado RF05 
+DELETE http://localhost:3000/tickets/1
