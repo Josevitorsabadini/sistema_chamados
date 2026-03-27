@@ -13,6 +13,5 @@ CREATE TABLE tickets (
     descricao TEXT,
     responsavel_id INT NOT NULL,
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
     FOREIGN KEY (responsavel_id) REFERENCES users(id)
 );
